@@ -234,7 +234,7 @@ img { max-width: 100%; height: auto; display: block; }
     position: fixed;
     top: var(--header-height);
     right: -100%;
-    width: 75%;
+    width: 40%;
     max-width: 280px;
     height: 100%;
     padding: 2rem 1.5rem;
@@ -290,7 +290,6 @@ img { max-width: 100%; height: auto; display: block; }
 .home__social-icon:hover { color: var(--color-primary); }
 .home__img  { position: absolute; right: 0; bottom: 0; width: 260px; }
 .home__blob { fill: var(--color-primary); }
-.home__blob-img { width: 360px; }
 
 /* ============================================================
    ABOUT SECTION
@@ -479,36 +478,57 @@ img { max-width: 100%; height: auto; display: block; }
    Mobile → Tablet → Desktop → Wide Desktop
    ============================================================ */
 
-/* Extra-small phones (≤ 320px) */
-@media screen and (max-width: 320px) {
-  .home { row-gap: 2rem; }
-  .home__img {
-    width: 200px;
-    right: auto; bottom: auto;
-    position: relative;
-    margin: 0 auto;
-  }
-  .home__blob-img { width: 200px; }
-}
-
-/* Small phones (≤ 575px) — stack hero image above text */
+/* Small phones (<= 575px) -- vertical stack: image -> socials -> text */
 @media screen and (max-width: 575px) {
   .home {
-    row-gap: 3rem;
     display: flex;
-    flex-direction: column-reverse;
-    padding-top: 5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 5rem 1rem 3rem;
   }
+
+  /* 1 -- blob image fills most of screen width so face shows fully.
+     The SVG viewBox is 479x467 and the photo sits at x=40 y=40 inside it.
+     We keep .home__blob-img large (420px) so the image fills the blob shape;
+     the SVG mask does all the clipping -- we just scale the SVG container. */
   .home__img {
-    width: 280px;
-    right: auto; bottom: auto;
+    order: 1;
     position: relative;
+    right: auto; bottom: auto;
+    width: min(85vw, 340px);
     margin: 0 auto;
   }
-  .home__blob-img { width: 280px; }
-  .home__data     { text-align: center; }
-  .home__social   { flex-direction: row; justify-content: center; gap: 1rem; }
+  .home__blob-img { width: 420px; }
+
+  /* 2 -- social icons row, centred */
+  .home__social {
+    order: 2;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.25rem;
+  }
   .home__social-icon { margin-bottom: 0; }
+
+  /* 3 -- headline + button */
+  .home__data {
+    order: 3;
+    text-align: center;
+  }
+}
+
+/* Centre the Send Message button on mobile */
+@media screen and (max-width: 575px) {
+  .contact__button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Extra-small phones (<= 320px) -- slightly smaller blob */
+@media screen and (max-width: 320px) {
+  .home__img      { width: min(90vw, 260px); }
+  .home__blob-img { width: 420px; } /* keep internal image large -- mask clips it */
 }
 
 /* Mid-range tablets (576px – 900px) */
