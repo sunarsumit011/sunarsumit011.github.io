@@ -1,0 +1,574 @@
+/* ============================================================
+   GOOGLE FONTS
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   All repeated values live here — change once, update everywhere.
+   ============================================================ */
+:root {
+  /* Layout */
+  --header-height: 3rem;
+
+  /* Typography weights */
+  --font-semi: 600;
+
+  /* Brand palette — built from a single hue so recoloring is easy */
+  --hue: 224;
+  --color-primary:     hsl(var(--hue), 89%, 60%);
+  --color-primary-alt: hsl(var(--hue), 89%, 46%);
+  --color-text:        hsl(var(--hue), 56%, 12%);
+
+  /* Font */
+  --font-family: "Poppins", sans-serif;
+
+  /* Font sizes — mobile-first base */
+  --fs-hero:   2rem;
+  --fs-h2:     1.25rem;
+  --fs-body:   0.938rem;
+  --fs-small:  0.75rem;
+
+  /* Spacing scale */
+  --sp-2: 1rem;
+  --sp-4: 2rem;
+  --sp-5: 2.5rem;
+  --sp-6: 3rem;
+
+  /* Z-index layers */
+  --z-behind: -10;
+  --z-fixed:  100;
+
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+  --transition-mid:  0.4s ease;
+
+  /* Border radius */
+  --radius: 0.5rem;
+}
+
+/* ============================================================
+   DARK MODE VARIABLES
+   Overriding only the tokens that differ — no duplicated rules.
+   ============================================================ */
+body.dark-mode {
+  --color-text:    #e0e0e0;
+  --color-surface: #1a1a1a;
+  --color-bg:      #121212;
+  --color-input:   #2a2a2a;
+  --color-border:  #3a3a3a;
+  --color-muted:   #b0b3b8;
+}
+
+/* ============================================================
+   LARGER SCREEN FONT SCALE
+   ============================================================ */
+@media screen and (min-width: 968px) {
+  :root {
+    --fs-hero:  3.5rem;
+    --fs-h2:    2rem;
+    --fs-body:  1rem;
+    --fs-small: 0.875rem;
+  }
+}
+
+/* ============================================================
+   DARK MODE — COMPONENT OVERRIDES
+   Grouped together so they're easy to maintain.
+   ============================================================ */
+body.dark-mode                             { background-color: var(--color-bg); }
+body.dark-mode .l-header                   { background-color: var(--color-surface); box-shadow: 0 1px 0 rgba(255,255,255,0.1); }
+body.dark-mode .nav__link,
+body.dark-mode .nav__logo                  { color: var(--color-text); }
+body.dark-mode .dark__mode                 { color: var(--color-primary); }
+body.dark-mode .nav__menu                  { background-color: var(--color-surface); }
+body.dark-mode section                     { background-color: var(--color-bg); }
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .section-title,
+body.dark-mode .home__title                { color: #f1f3f4; }
+body.dark-mode p                           { color: var(--color-muted); }
+body.dark-mode .project__item             { background-color: var(--color-surface); box-shadow: 0 4px 25px rgba(0,0,0,0.5); }
+body.dark-mode .project__item:hover       { box-shadow: 0 8px 35px rgba(0,0,0,0.7); }
+body.dark-mode .projects__github-card      { border-color: var(--color-primary); }
+body.dark-mode .contact__form              { background-color: var(--color-surface); }
+body.dark-mode .contact__input             { background-color: var(--color-input); color: #f1f3f4; border-color: var(--color-border); }
+body.dark-mode .contact__input::placeholder{ color: var(--color-muted); }
+body.dark-mode .footer                     { background-color: #0a0a0a; }
+body.dark-mode .skills__bar                { background-color: var(--color-input); }
+body.dark-mode .about__text,
+body.dark-mode .skills__text               { color: var(--color-muted); }
+body.dark-mode .about__img img             { box-shadow: 0 0 0 1px rgba(255,255,255,0.1); }
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+*, ::before, ::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--font-family);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+}
+
+h1, h2, p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+a  { text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ============================================================
+   REUSABLE UTILITIES
+   ============================================================ */
+
+/* Centered section title with decorative underline */
+.section-title {
+  position: relative;
+  font-size: var(--fs-h2);
+  color: var(--color-primary);
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-4);
+  text-align: center;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 64px;
+  height: 0.18rem;
+  left: 0; right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--color-primary);
+}
+
+/* Consistent section vertical padding */
+.section { padding-top: 3rem; padding-bottom: 2rem; }
+
+/* Centered max-width grid wrapper */
+.bd-grid {
+  max-width: 1024px;
+  display: grid;
+  margin-left: var(--sp-2);
+  margin-right: var(--sp-2);
+}
+
+/* Shared CTA button style */
+.button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: var(--radius);
+  transition: box-shadow var(--transition-fast);
+}
+.button:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.15); }
+
+/* ============================================================
+   HEADER & NAVIGATION
+   ============================================================ */
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: var(--z-fixed);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146,161,176,0.15);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-semi);
+}
+
+.nav__logo { color: var(--color-text); }
+
+/* Hamburger icon — hidden on desktop */
+.nav__toggle {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Nav link with animated underline on hover / active */
+.nav__link { position: relative; color: var(--color-text); }
+.nav__link:hover::after,
+.active-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--color-primary);
+}
+
+/* Dark mode toggle icon */
+.dark__mode {
+  color: var(--color-text);
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: color var(--transition-fast);
+}
+.dark__mode:hover { color: var(--color-primary); }
+
+/* ============================================================
+   MOBILE / NARROW NAVIGATION  (≤ 900px)
+   Covers phones and narrow split-screen windows.
+   ============================================================ */
+@media screen and (max-width: 900px) {
+  .nav__toggle { display: block; }
+
+  /* Slide-in panel from the right */
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 75%;
+    max-width: 280px;
+    height: 100%;
+    padding: 2rem 1.5rem;
+    background-color: var(--color-text);
+    transition: right var(--transition-mid);
+    overflow-y: auto;
+  }
+  .nav__menu.show { right: 0; }
+
+  .nav__list        { display: flex; flex-direction: column; }
+  .nav__item        { margin-bottom: var(--sp-4); }
+  /* Move dark mode toggle to the top of the mobile menu */
+  .nav__item.dark-mode-item { order: -1; margin-bottom: var(--sp-2); }
+
+  .nav__link               { display: block; color: #fff; font-size: 1rem; padding: 0.25rem 0; }
+  .nav__link:hover::after,
+  .active-link::after      { top: 1.5rem; }
+
+  .nav__menu .dark__mode       { color: #fff; }
+  .nav__menu .dark__mode:hover { color: #ccc; }
+}
+
+/* ============================================================
+   DESKTOP NAVIGATION  (> 900px)
+   ============================================================ */
+@media screen and (min-width: 901px) {
+  body { margin: 0; }
+  .nav { height: calc(var(--header-height) + 1.5rem); }
+  .nav__list   { display: flex; align-items: center; }
+  .nav__item   { margin-left: var(--sp-6); margin-bottom: 0; }
+  .nav__toggle { display: none; }
+  .dark__mode  { margin-left: 1rem; padding-right: 0.5rem; }
+}
+
+/* ============================================================
+   HOME SECTION
+   ============================================================ */
+.home {
+  position: relative;
+  row-gap: 5rem;
+  padding: 4rem 0 5rem;
+}
+.home__data          { align-self: center; }
+.home__title         { font-size: var(--fs-hero); margin-bottom: var(--sp-5); }
+.home__title-color   { color: var(--color-primary); }
+.home__social        { display: flex; flex-direction: column; }
+.home__social-icon {
+  width: max-content;
+  margin-bottom: var(--sp-2);
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+.home__social-icon:hover { color: var(--color-primary); }
+.home__img  { position: absolute; right: 0; bottom: 0; width: 260px; }
+.home__blob { fill: var(--color-primary); }
+.home__blob-img { width: 360px; }
+
+/* ============================================================
+   ABOUT SECTION
+   ============================================================ */
+.about__container  { row-gap: 2rem; text-align: center; }
+.about__subtitle   { margin-bottom: var(--sp-2); }
+.about__img        { justify-self: center; }
+.about__img img {
+  width: 200px;
+  border-radius: var(--radius);
+  transform: translateY(-10px);
+}
+
+/* ============================================================
+   SKILLS SECTION
+   ============================================================ */
+.skills__container { row-gap: 2rem; text-align: center; }
+.skills__subtitle  { margin-bottom: var(--sp-2); }
+.skills__text      { margin-bottom: var(--sp-4); }
+
+/* Individual skill row */
+.skills__data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-weight: var(--font-semi);
+  padding: 0.5rem 1rem;
+  margin-bottom: var(--sp-4);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 25px rgba(14,36,49,0.15);
+}
+.skills__names { display: flex; align-items: center; }
+.skills__icon  { font-size: 2rem; margin-right: var(--sp-2); color: var(--color-primary); }
+
+/* Devicon images used as skill icons */
+.skills__names img.skills__icon {
+  width: 2rem; height: 2rem;
+  object-fit: contain;
+  margin-right: var(--sp-2);
+}
+
+/* Coloured progress bar at the bottom of each row */
+.skills__bar {
+  position: absolute;
+  left: 0; bottom: 0;
+  background-color: var(--color-primary);
+  height: 0.25rem;
+  border-radius: var(--radius);
+  z-index: var(--z-behind);
+}
+
+/* Individual skill widths — match the percentage shown */
+.skills__html       { width: 95%; }
+.skills__css        { width: 85%; }
+.skills__js         { width: 65%; }
+.skills__ux         { width: 85%; }
+.skills__python     { width: 75%; }
+.skills__java       { width: 70%; }
+.skills__swing      { width: 60%; }
+.skills__git        { width: 80%; }
+.skills__github     { width: 80%; }
+.skills__mysql      { width: 70%; }
+.skills__networking { width: 60%; }
+
+.skills__img { border-radius: var(--radius); width: 100%; }
+
+/* ============================================================
+   PROJECTS SECTION
+   ============================================================ */
+.projects__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Project card */
+.project__item {
+  padding: 1.5rem;
+  box-shadow: 0 4px 25px rgba(14,36,49,0.15);
+  border-radius: var(--radius);
+  background-color: #fff;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.project__item:hover {
+  box-shadow: 0 8px 35px rgba(14,36,49,0.25);
+  transform: translateY(-5px);
+}
+.project__title {
+  font-size: 1.1rem;
+  font-weight: var(--font-semi);
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+.project__description { line-height: 1.6; }
+
+/* Special "More on GitHub" card */
+.projects__github-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 2px dashed var(--color-primary);
+}
+.projects__github-icon { font-size: 2.5rem; color: var(--color-primary); line-height: 1; }
+.projects__github-btn  { margin-top: 0.5rem; padding: 0.5rem 1.5rem; font-size: var(--fs-small); }
+
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+.contact__input {
+  width: 100%;
+  font-size: var(--fs-body);
+  font-weight: var(--font-semi);
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--color-text);
+  outline: none;
+  margin-bottom: var(--sp-4);
+}
+
+.contact__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: var(--fs-body);
+  cursor: pointer;
+  margin-left: auto;
+  transition: box-shadow var(--transition-fast), transform 0.2s ease;
+}
+.contact__button:hover {
+  box-shadow: 0 10px 36px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+.contact__btn-icon { font-size: 1.1rem; }
+
+/* Informational notice above the submit button */
+.contact__notice {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  opacity: 0.6;
+  margin-bottom: var(--sp-2);
+}
+.contact__notice i { font-size: 0.9rem; flex-shrink: 0; }
+
+/* Validation feedback messages */
+.contact__error {
+  color: #e74c3c;
+  font-size: var(--fs-small);
+  margin-bottom: var(--sp-2);
+  min-height: 1.2em;
+  font-weight: var(--font-semi);
+}
+.contact__success {
+  color: var(--color-primary);
+  font-size: var(--fs-small);
+  margin-bottom: var(--sp-2);
+  min-height: 1.2em;
+  font-weight: var(--font-semi);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background-color: var(--color-text);
+  color: #fff;
+  text-align: center;
+  font-weight: var(--font-semi);
+  padding: 2rem 0;
+}
+.footer__title  { font-size: 2rem; margin-bottom: var(--sp-4); }
+.footer__social { margin-bottom: var(--sp-4); }
+.footer__icon   { font-size: 1.5rem; color: #fff; margin: 0 var(--sp-2); }
+.footer__copy   { font-size: var(--fs-small); }
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   Mobile → Tablet → Desktop → Wide Desktop
+   ============================================================ */
+
+/* Extra-small phones (≤ 320px) */
+@media screen and (max-width: 320px) {
+  .home { row-gap: 2rem; }
+  .home__img {
+    width: 200px;
+    right: auto; bottom: auto;
+    position: relative;
+    margin: 0 auto;
+  }
+  .home__blob-img { width: 200px; }
+}
+
+/* Small phones (≤ 575px) — stack hero image above text */
+@media screen and (max-width: 575px) {
+  .home {
+    row-gap: 3rem;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 5rem;
+  }
+  .home__img {
+    width: 280px;
+    right: auto; bottom: auto;
+    position: relative;
+    margin: 0 auto;
+  }
+  .home__blob-img { width: 280px; }
+  .home__data     { text-align: center; }
+  .home__social   { flex-direction: row; justify-content: center; gap: 1rem; }
+  .home__social-icon { margin-bottom: 0; }
+}
+
+/* Mid-range tablets (576px – 900px) */
+@media screen and (min-width: 576px) and (max-width: 900px) {
+  .home { padding: 5rem 0 3rem; }
+  .home__social {
+    padding-bottom: 2.5rem;
+    flex-direction: row;
+    align-self: flex-end;
+    gap: var(--sp-4);
+  }
+  .home__social-icon { margin-bottom: 0; }
+  .home__img         { width: 300px; bottom: 25%; }
+
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  .skills__container { grid-template-columns: 0.7fr; justify-content: center; }
+  .projects__container { grid-template-columns: repeat(2, 1fr); padding-top: 2rem; }
+
+  .contact__form      { width: 360px; padding-top: 2rem; }
+  .contact__container { justify-items: center; }
+}
+
+/* Desktop (> 900px) — full two-column layouts */
+@media screen and (min-width: 901px) {
+  .section       { padding-top: 4rem; padding-bottom: 3rem; }
+  .section-title { margin-bottom: var(--sp-6); }
+  .section-title::after { width: 80px; top: 3rem; }
+
+  .home { padding: 8rem 0 2rem; }
+  .home__img    { width: 400px; bottom: 10%; }
+  .home__social { flex-direction: row; gap: 1.25rem; align-self: auto; padding-bottom: 0; }
+  .home__social-icon { margin-bottom: 0; }
+
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: initial;
+    padding-top: 2rem;
+  }
+  .about__img img { width: 300px; }
+
+  .skills__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    text-align: initial;
+  }
+  .projects__container { grid-template-columns: repeat(3, 1fr); column-gap: 2rem; }
+
+  .contact__form      { width: 460px; padding-top: 2rem; }
+  .contact__container { justify-items: center; }
+}
+
+/* Wide desktop (≥ 992px) — auto-centre the grid wrapper */
+@media screen and (min-width: 992px) {
+  .bd-grid  { margin-left: auto; margin-right: auto; }
+  .home     { padding: 10rem 0 2rem; }
+  .home__img{ width: 450px; }
+}

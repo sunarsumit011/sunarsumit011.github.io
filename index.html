@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sumit Sunar — Front-end & Web Developer portfolio."
+    />
+
+    <!-- Preconnect speeds up Google Fonts and BoxIcons loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Main stylesheet (includes Google Fonts @import) -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- BoxIcons icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+    />
+
+    <title>Sumit Sunar — Portfolio</title>
+  </head>
+
+  <body>
+    <!-- ======================================================
+         HEADER — fixed navigation bar
+         ====================================================== -->
+    <header class="l-header">
+      <nav class="nav bd-grid">
+        <!-- Site logo / name -->
+        <a href="#" class="nav__logo">Sumit Sunar</a>
+
+        <!-- Navigation links (desktop: inline | mobile: slide-in panel) -->
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">Skills</a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link">Projects</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+
+            <!-- Dark mode toggle — ordered to top of list on mobile via CSS -->
+            <li class="nav__item dark-mode-item">
+              <a href="#" class="nav__link dark__mode" id="dark-mode">
+                <i class="bx bxs-moon"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hamburger button — visible only on mobile -->
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-menu"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ======================================================
+         MAIN CONTENT
+         ====================================================== -->
+    <main class="l-main">
+      <!-- ====================================================
+           HOME — hero section with photo and social links
+           ==================================================== -->
+      <section class="home bd-grid" id="home">
+        <!-- Headline and CTA button -->
+        <div class="home__data">
+          <h1 class="home__title">
+            Hi,<br />
+            I'm <span class="home__title-color">Sumit</span><br />
+            Web Developer
+          </h1>
+          <a href="#contact" class="button">Contact</a>
+        </div>
+
+        <!-- Social media icon links -->
+        <div class="home__social">
+          <a
+            href="https://www.linkedin.com/in/sumit-sunar-b461ba2b3/"
+            class="home__social-icon"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <i class="bx bxl-linkedin"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/sumitsunarsunar/"
+            class="home__social-icon"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a
+            href="https://github.com/sumit011-ux"
+            class="home__social-icon"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <i class="bx bxl-github"></i>
+          </a>
+        </div>
+
+        <!-- Blob-shaped profile image using an SVG clip mask -->
+        <div class="home__img">
+          <svg
+            class="home__blob"
+            viewBox="0 0 479 467"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+          >
+            <defs>
+              <mask id="blob-mask" mask-type="alpha">
+                <path
+                  d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"
+                />
+              </mask>
+            </defs>
+            <g mask="url(#blob-mask)">
+              <path
+                d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"
+              />
+              <image
+                class="home__blob-img"
+                x="40"
+                y="40"
+                href="assets/img/sumit.png"
+                loading="lazy"
+              />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           ABOUT — short bio with photo
+           ==================================================== -->
+      <section class="about section" id="about">
+        <h2 class="section-title">About</h2>
+
+        <div class="about__container bd-grid">
+          <div class="about__img">
+            <img
+              src="assets/img/sumit.1png.png"
+              alt="Sumit Sunar"
+              loading="lazy"
+            />
+          </div>
+
+          <div>
+            <h2 class="about__subtitle">I'm Sumit</h2>
+            <p class="about__text">
+              I turn ideas into responsive and interactive web applications
+              using HTML, CSS, JavaScript, and React. I enjoy solving problems
+              through code, building clean user interfaces, and continuously
+              improving my development skills to create better digital
+              experiences.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           SKILLS — progress bars + side image
+           ==================================================== -->
+      <section class="skills section" id="skills">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills__container bd-grid">
+          <div>
+            <h2 class="skills__subtitle">Professional Skills</h2>
+            <p class="skills__text">
+              Able to develop modern and visually appealing interfaces that
+              provide smooth user experiences across different devices and
+              screen sizes. Dedicated to writing organised, maintainable code
+              while continuously exploring new technologies.
+            </p>
+
+            <!--
+              Skill bars — each block follows the same structure:
+              icon + name | progress bar | percentage
+            -->
+
+            <!-- HTML5 -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="bx bxl-html5 skills__icon"></i>
+                <span class="skills__name">HTML5</span>
+              </div>
+              <div class="skills__bar skills__html"></div>
+              <span class="skills__percentage">95%</span>
+            </div>
+
+            <!-- CSS3 -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="bx bxl-css3 skills__icon"></i>
+                <span class="skills__name">CSS3</span>
+              </div>
+              <div class="skills__bar skills__css"></div>
+              <span class="skills__percentage">85%</span>
+            </div>
+
+            <!-- JavaScript -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="bx bxl-javascript skills__icon"></i>
+                <span class="skills__name">JavaScript</span>
+              </div>
+              <div class="skills__bar skills__js"></div>
+              <span class="skills__percentage">65%</span>
+            </div>
+
+            <!-- UX / UI -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="bx bxs-paint skills__icon"></i>
+                <span class="skills__name">UX/UI (Figma &amp; Balsamiq)</span>
+              </div>
+              <div class="skills__bar skills__ux"></div>
+              <span class="skills__percentage">85%</span>
+            </div>
+
+            <!-- Python — uses Devicon image instead of BoxIcon -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="Python logo"
+                  class="skills__icon"
+                  loading="lazy"
+                />
+                <span class="skills__name">Python</span>
+              </div>
+              <div class="skills__bar skills__python"></div>
+              <span class="skills__percentage">75%</span>
+            </div>
+
+            <!-- Java -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                  alt="Java logo"
+                  class="skills__icon"
+                  loading="lazy"
+                />
+                <span class="skills__name">Java</span>
+              </div>
+              <div class="skills__bar skills__java"></div>
+              <span class="skills__percentage">70%</span>
+            </div>
+
+            <!-- Swing -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="bx bxs-window-alt skills__icon"></i>
+                <span class="skills__name">Swing</span>
+              </div>
+              <div class="skills__bar skills__swing"></div>
+              <span class="skills__percentage">60%</span>
+            </div>
+
+            <!-- Git -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="bx bxl-git skills__icon"></i>
+                <span class="skills__name">Git</span>
+              </div>
+              <div class="skills__bar skills__git"></div>
+              <span class="skills__percentage">80%</span>
+            </div>
+
+            <!-- GitHub -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="bx bxl-github skills__icon"></i>
+                <span class="skills__name">GitHub</span>
+              </div>
+              <div class="skills__bar skills__github"></div>
+              <span class="skills__percentage">80%</span>
+            </div>
+
+            <!-- MySQL -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                  alt="MySQL logo"
+                  class="skills__icon"
+                  loading="lazy"
+                />
+                <span class="skills__name">MySQL</span>
+              </div>
+              <div class="skills__bar skills__mysql"></div>
+              <span class="skills__percentage">70%</span>
+            </div>
+
+            <!-- Networking -->
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="bx bxs-network-chart skills__icon"></i>
+                <span class="skills__name">Networking (basics)</span>
+              </div>
+              <div class="skills__bar skills__networking"></div>
+              <span class="skills__percentage">60%</span>
+            </div>
+          </div>
+
+          <!-- Decorative side image -->
+          <div>
+            <img
+              src="assets/img/work3.jpg"
+              alt="Developer working"
+              class="skills__img"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           PROJECTS — card grid with GitHub link
+           ==================================================== -->
+      <section class="projects section" id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects__container bd-grid">
+          <!-- Project cards — each follows the same two-element pattern -->
+
+          <div class="project__item">
+            <h3 class="project__title">Netflix Clone</h3>
+            <p class="project__description">
+              A fully responsive Netflix clone built with HTML, CSS, and
+              JavaScript. Features dynamic content display, search
+              functionality, and a modern UI similar to the original interface.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Currency Converter</h3>
+            <p class="project__description">
+              A real-time currency converter that fetches live exchange rates
+              and instantly displays conversions between multiple currencies.
+              Built with HTML, CSS, and JavaScript.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Myntra Clone</h3>
+            <p class="project__description">
+              An e-commerce platform clone with product listings, filtering
+              options, and a full add-to-cart flow. Built with HTML, CSS, and
+              vanilla JavaScript.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Amazon Clone</h3>
+            <p class="project__description">
+              A comprehensive Amazon clone with a product catalogue, search, and
+              shopping cart management. Developed to replicate core e-commerce
+              functionality using HTML, CSS, and JavaScript.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Facebook Login Page Clone</h3>
+            <p class="project__description">
+              An accurate replica of Facebook's login page with responsive
+              design and form validation. Created with HTML, CSS, and JavaScript
+              for learning purposes.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Quiz App</h3>
+            <p class="project__description">
+              An interactive quiz application with multiple questions, instant
+              feedback, and score tracking. Built with HTML, CSS, and JavaScript
+              with a clean, user-friendly interface.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Notes App</h3>
+            <p class="project__description">
+              A note-taking app with full CRUD functionality and local storage
+              for persistent data. Built with HTML, CSS, and JavaScript.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Todo List</h3>
+            <p class="project__description">
+              A to-do list manager with task creation, completion toggling, and
+              deletion. Built with HTML, CSS, and JavaScript with a simple yet
+              effective interface.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Web-Based Clock</h3>
+            <p class="project__description">
+              A digital clock displaying real-time hours, minutes, and seconds,
+              built with HTML, CSS, and JavaScript.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Weather App</h3>
+            <p class="project__description">
+              A weather application that fetches real-time data from a public
+              API and shows temperature, conditions, and forecasts.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Color Flipper</h3>
+            <p class="project__description">
+              Generates random background colours on button click and includes
+              copy-to-clipboard for the colour code. Built with HTML, CSS, and
+              JavaScript.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Calculator</h3>
+            <p class="project__description">
+              A fully functional calculator supporting basic arithmetic, with
+              keyboard support and a live expression display. Built with HTML,
+              CSS, and JavaScript.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Stopwatch</h3>
+            <p class="project__description">
+              A browser-based stopwatch with start, pause, reset, and
+              lap-recording features. Accurate to the millisecond.
+            </p>
+          </div>
+
+          <div class="project__item">
+            <h3 class="project__title">Age Calculator</h3>
+            <p class="project__description">
+              Computes exact age in years, months, and days from a given date of
+              birth, with real-time input validation.
+            </p>
+          </div>
+
+          <!-- Special card — links to the full GitHub profile -->
+          <div class="project__item projects__github-card">
+            <div class="projects__github-icon">
+              <i class="bx bxl-github"></i>
+            </div>
+            <h3 class="project__title">More on GitHub</h3>
+            <p class="project__description">
+              All projects are built with HTML, CSS, and JavaScript. View the
+              complete source code and more projects on my GitHub profile.
+            </p>
+            <a
+              href="https://github.com/sumit011-ux"
+              target="_blank"
+              rel="noreferrer noopener"
+              class="button projects__github-btn"
+              >View GitHub</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           CONTACT — mailto form
+           ==================================================== -->
+      <section class="contact section" id="contact">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact__container bd-grid">
+          <!-- novalidate disables browser defaults so JS handles all feedback -->
+          <form class="contact__form" id="contact-form" novalidate>
+            <input
+              type="text"
+              id="contact-name"
+              placeholder="Name"
+              class="contact__input"
+              required
+              autocomplete="name"
+            />
+            <input
+              type="email"
+              id="contact-email"
+              placeholder="Email"
+              class="contact__input"
+              required
+              autocomplete="email"
+            />
+            <textarea
+              id="contact-message"
+              rows="10"
+              placeholder="Message"
+              class="contact__input"
+              required
+            ></textarea>
+
+            <!-- Inline notice so users know this triggers their mail client -->
+            <p class="contact__notice">
+              <i class="bx bx-info-circle"></i>
+              This opens your default mail app — an email client must be
+              configured to send.
+            </p>
+
+            <!-- JS writes validation errors here -->
+            <p class="contact__error" id="contact-error"></p>
+            <!-- JS writes success feedback here -->
+            <p class="contact__success" id="contact-success"></p>
+
+            <button type="submit" class="contact__button button">
+              <i class="bx bx-send contact__btn-icon"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+    <footer class="footer">
+      <p class="footer__title">Sumit Sunar</p>
+
+      <div class="footer__social">
+        <a
+          href="https://www.facebook.com/share/1H6H2agES1/"
+          class="footer__icon"
+          aria-label="Facebook"
+        >
+          <i class="bx bxl-facebook"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/sumitsunarsunar/"
+          class="footer__icon"
+          aria-label="Instagram"
+        >
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a
+          href="https://github.com/sumit011-ux"
+          class="footer__icon"
+          aria-label="GitHub"
+        >
+          <i class="bx bxl-github"></i>
+        </a>
+      </div>
+
+      <p class="footer__copy">&copy; Sumit Sunar. All rights reserved.</p>
+    </footer>
+
+    <!-- ScrollReveal — loaded at the bottom so it doesn't block rendering -->
+    <script src="https://unpkg.com/scrollreveal" defer></script>
+
+    <!-- Main JS — defer keeps it non-blocking -->
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
