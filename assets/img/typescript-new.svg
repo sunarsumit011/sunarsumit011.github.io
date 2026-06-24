@@ -1,6 +1,6 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="TypeScript logo">
-  <rect width="256" height="256" rx="32" fill="#3178C6"/>
-  <path fill="#fff" d="M85 73h28v111H85z"/>
-  <path fill="#fff" d="M146 73h27v15h-11v96h-15V88h-11z"/>
-  <path fill="#fff" d="M105 135h35v13h-35z" opacity="0.5"/>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="TypeScript">
+  <rect width="256" height="256" rx="50" fill="#3178C6"/>
+  <g fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="120" font-weight="bold">
+    <text x="50" y="185">TS</text>
+  </g>
 </svg>
