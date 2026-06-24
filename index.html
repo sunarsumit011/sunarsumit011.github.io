@@ -2,14 +2,57 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Sumit Sunar | Front-End Developer — React, JavaScript &amp; TypeScript
+    </title>
     <meta
       name="description"
-      content="Sumit Sunar - Frontend Developer portfolio."
+      content="Sumit Sunar is a front-end developer specializing in React, JavaScript, and TypeScript. Explore responsive web apps, UI projects, and get in touch for collaborations."
     />
+    <meta name="author" content="Sumit Sunar" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sunarsumit011.example.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sumit Sunar | Front-End Developer" />
+    <meta
+      property="og:description"
+      content="Front-end developer building responsive, accessible web applications with React, JavaScript, and TypeScript."
+    />
+    <meta
+      property="og:image"
+      content="https://sunarsumit011.example.com/assets/img/sumit.webp"
+    />
+    <meta property="og:url" content="https://sunarsumit011.example.com/" />
+    <meta property="og:site_name" content="Sumit Sunar Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sumit Sunar | Front-End Developer" />
+    <meta
+      name="twitter:description"
+      content="Front-end developer building responsive, accessible web applications with React, JavaScript, and TypeScript."
+    />
+    <meta
+      name="twitter:image"
+      content="https://sunarsumit011.example.com/assets/img/sumit.webp"
+    />
+
+    <link rel="icon" href="assets/img/sumit.webp" type="image/webp" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
 
     <link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -18,15 +61,38 @@
       href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
     />
 
-    <link rel="icon" href="assets/img/sumit.webp" type="image/webp" />
-
-    <title>Sumit Sunar - Frontend Developer</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sumit Sunar",
+        "jobTitle": "Front-End Developer",
+        "url": "https://sunarsumit011.example.com/",
+        "image": "https://sunarsumit011.example.com/assets/img/sumit.webp",
+        "sameAs": [
+          "https://www.linkedin.com/in/sunarsumit011/",
+          "https://www.instagram.com/sunarsumit011/",
+          "https://github.com/sunarsumit011",
+          "https://www.facebook.com/sunarsumit011"
+        ],
+        "knowsAbout": [
+          "React",
+          "JavaScript",
+          "TypeScript",
+          "Tailwind CSS",
+          "HTML5",
+          "CSS3"
+        ]
+      }
+    </script>
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="l-header">
-      <nav class="nav bd-grid">
-        <a href="#" class="nav__logo">Sumit Sunar</a>
+      <nav class="nav bd-grid" aria-label="Primary">
+        <a href="#home" class="nav__logo">Sumit Sunar</a>
 
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
@@ -47,64 +113,83 @@
             </li>
 
             <li class="nav__item dark-mode-item">
-              <a href="javascript:void(0)" class="nav__link dark__mode" id="dark-mode">
-                <i class="bx bxs-moon"></i>
-              </a>
+              <button
+                type="button"
+                class="nav__link dark__mode"
+                id="dark-mode"
+                aria-pressed="false"
+                aria-label="Toggle dark mode"
+              >
+                <i class="bx bxs-moon" aria-hidden="true"></i>
+              </button>
             </li>
           </ul>
         </div>
 
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="bx bx-menu"></i>
-        </div>
+        <button
+          type="button"
+          class="nav__toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Open menu"
+        >
+          <i class="bx bx-menu" aria-hidden="true"></i>
+        </button>
       </nav>
     </header>
 
-    <main class="l-main">
-      <section class="home bd-grid" id="home">
+    <main class="l-main" id="main-content">
+      <section class="home bd-grid" id="home" aria-label="Introduction">
         <div class="home__data">
           <h1 class="home__title">
-            Hi,<br />
-            I'm <span class="home__title-color">Sumit</span><br />
-            Frontend Developer
+            <span id="hero-typed">
+              <span class="sr-only"
+                >Hi, I'm Sumit, Front-End Developer</span
+              > </span
+            ><span class="hero-cursor" aria-hidden="true"></span>
           </h1>
-          <a href="#contact" class="button">Contact</a>
-        </div>
 
-        <div class="home__social">
-          <a
-            href="https://www.linkedin.com/in/sunarsumit011/"
-            class="home__social-icon"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <i class="bx bxl-linkedin"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/sunarsumit011/"
-            class="home__social-icon"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <i class="bx bxl-instagram"></i>
-          </a>
-          <a
-            href="https://github.com/sunarsumit011"
-            class="home__social-icon"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <i class="bx bxl-github"></i>
-          </a>
+          <nav class="home__social" aria-label="Social media links">
+            <a
+              href="https://www.linkedin.com/in/sunarsumit011/"
+              class="home__social-icon"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Sumit Sunar on LinkedIn (opens in new tab)"
+            >
+              <i class="bx bxl-linkedin" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/sunarsumit011/"
+              class="home__social-icon"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Sumit Sunar on Instagram (opens in new tab)"
+            >
+              <i class="bx bxl-instagram" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://github.com/sunarsumit011"
+              class="home__social-icon"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Sumit Sunar on GitHub (opens in new tab)"
+            >
+              <i class="bx bxl-github" aria-hidden="true"></i>
+            </a>
+          </nav>
+
+          <a href="#contact" class="button">Contact me</a>
         </div>
 
         <div class="home__img">
           <svg
             class="home__blob"
             viewBox="0 0 479 467"
-            xmlns="http:
-            xmlns:xlink="http:
+            xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
+            focusable="false"
           >
             <defs>
               <mask id="blob-mask" mask-type="alpha">
@@ -119,246 +204,357 @@
               />
               <image
                 class="home__blob-img"
-                x="30"
-                y="40"
-                width="420"
-                height="420"
-                preserveAspectRatio="xMidYMid meet"
+                x="0"
+                y="0"
+                width="479"
+                height="467"
+                preserveAspectRatio="xMidYMid slice"
                 href="assets/img/sumit.webp"
-                loading="lazy"
               />
             </g>
           </svg>
         </div>
       </section>
 
-      <section class="about section" id="about">
-        <h2 class="section-title">About</h2>
+      <section class="about section" id="about" aria-labelledby="about-heading">
+        <h2 class="section-title" id="about-heading">About</h2>
 
         <div class="about__container bd-grid">
           <div class="about__img">
-            <img src="assets/img/sumit.webp" alt="Sumit Sunar" loading="lazy" />
+            <img
+              src="assets/img/sumit.webp"
+              alt="Portrait of Sumit Sunar, front-end developer"
+              width="300"
+              height="300"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
-          <div>
-            <h2 class="about__subtitle">I'm Sumit</h2>
+          <article>
+            <h3 class="about__subtitle">I'm Sumit</h3>
             <p class="about__text">
-              I turn ideas into responsive and interactive web applications
-              using HTML, CSS, JavaScript, and React. I enjoy solving problems
-              through code, building clean user interfaces, and continuously
-              improving my development skills to create better digital
-              experiences.
+              Hi, I'm Sumit. I build responsive and interactive web applications
+              with React, JavaScript, TypeScript, Tailwind CSS, HTML, and CSS.
+              Passionate about clean UI design, problem-solving, and creating
+              seamless user experiences.
             </p>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section class="skills section" id="skills">
-        <h2 class="section-title">Skills</h2>
+      <section
+        class="skills section"
+        id="skills"
+        aria-labelledby="skills-heading"
+      >
+        <h2 class="section-title" id="skills-heading">Skills</h2>
 
         <div class="skills__container bd-grid">
           <div>
-            <h2 class="skills__subtitle">Professional Skills</h2>
+            <h3 class="skills__subtitle">Professional Skills</h3>
             <p class="skills__text">
-              Able to develop modern and visually appealing interfaces that
-              provide smooth user experiences across different devices and
-              screen sizes. Dedicated to writing organised, maintainable code
-              while continuously exploring new technologies.
+              Skilled in building responsive and user-friendly web interfaces
+              with clean code. Continuously learning and improving to create
+              better web experiences.
             </p>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <img
-                  src="assets/img/react.svg"
-                  alt="React logo"
-                  class="skills__icon"
-                  loading="lazy"
-                />
-                <span class="skills__name">React JS</span>
-              </div>
-              <div class="skills__bar skills__html"></div>
-              <span class="skills__percentage">95%</span>
-            </div>
+            <ul class="skills__list">
+              <li class="skills__data">
+                <div class="skills__names">
+                  <img
+                    src="assets/img/react.svg"
+                    alt=""
+                    class="skills__icon"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="skills__name">React JS</span>
+                </div>
+                <div
+                  class="skills__bar skills__react"
+                  role="progressbar"
+                  aria-label="React JS proficiency"
+                  aria-valuenow="70"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">70%</span>
+              </li>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <img
-                  src="assets/img/tailwind.svg"
-                  alt="Tailwind CSS logo"
-                  class="skills__icon"
-                  loading="lazy"
-                />
-                <span class="skills__name">Tailwind CSS</span>
-              </div>
-              <div class="skills__bar skills__html"></div>
-              <span class="skills__percentage">95%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <img
+                    src="assets/img/tailwind.svg"
+                    alt=""
+                    class="skills__icon"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="skills__name">Tailwind CSS</span>
+                </div>
+                <div
+                  class="skills__bar skills__tailwind"
+                  role="progressbar"
+                  aria-label="Tailwind CSS proficiency"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">80%</span>
+              </li>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <i class="bx bxl-html5 skills__icon"></i>
-                <span class="skills__name">HTML5</span>
-              </div>
-              <div class="skills__bar skills__html"></div>
-              <span class="skills__percentage">95%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <i class="bx bxl-html5 skills__icon" aria-hidden="true"></i>
+                  <span class="skills__name">HTML5</span>
+                </div>
+                <div
+                  class="skills__bar skills__html"
+                  role="progressbar"
+                  aria-label="HTML5 proficiency"
+                  aria-valuenow="95"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">95%</span>
+              </li>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <i class="bx bxl-css3 skills__icon"></i>
-                <span class="skills__name">CSS3</span>
-              </div>
-              <div class="skills__bar skills__css"></div>
-              <span class="skills__percentage">85%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <i class="bx bxl-css3 skills__icon" aria-hidden="true"></i>
+                  <span class="skills__name">CSS3</span>
+                </div>
+                <div
+                  class="skills__bar skills__css"
+                  role="progressbar"
+                  aria-label="CSS3 proficiency"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">85%</span>
+              </li>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <i class="bx bxl-javascript skills__icon"></i>
-                <span class="skills__name">JavaScript</span>
-              </div>
-              <div class="skills__bar skills__js"></div>
-              <span class="skills__percentage">65%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <i
+                    class="bx bxl-javascript skills__icon"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="skills__name">JavaScript</span>
+                </div>
+                <div
+                  class="skills__bar skills__js"
+                  role="progressbar"
+                  aria-label="JavaScript proficiency"
+                  aria-valuenow="65"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">65%</span>
+              </li>
 
-            
-            <div class="skills__data">
-              <div class="skills__names">
-                <img
-                  src="assets/img/typescript-new.svg"
-                  alt="TypeScript logo"
-                  class="skills__icon skills__icon--ts"
-                  loading="lazy"
-                />
-                <span class="skills__name">TypeScript</span>
-              </div>
-              <div class="skills__bar skills__ts"></div>
-              <span class="skills__percentage">75%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <img
+                    src="assets/img/typescript-new.svg"
+                    alt=""
+                    class="skills__icon skills__icon--ts"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="skills__name">TypeScript</span>
+                </div>
+                <div
+                  class="skills__bar skills__ts"
+                  role="progressbar"
+                  aria-label="TypeScript proficiency"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">75%</span>
+              </li>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <i class="bx bxs-paint skills__icon"></i>
-                <span class="skills__name">UX/UI</span>
-              </div>
-              <div class="skills__bar skills__ux"></div>
-              <span class="skills__percentage">85%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <i class="bx bxs-paint skills__icon" aria-hidden="true"></i>
+                  <span class="skills__name">UX/UI</span>
+                </div>
+                <div
+                  class="skills__bar skills__ux"
+                  role="progressbar"
+                  aria-label="UX/UI proficiency"
+                  aria-valuenow="85"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">85%</span>
+              </li>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <i class="bx bxl-git skills__icon"></i>
-                <span class="skills__name">Git</span>
-              </div>
-              <div class="skills__bar skills__git"></div>
-              <span class="skills__percentage">80%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <i class="bx bxl-git skills__icon" aria-hidden="true"></i>
+                  <span class="skills__name">Git</span>
+                </div>
+                <div
+                  class="skills__bar skills__git"
+                  role="progressbar"
+                  aria-label="Git proficiency"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">80%</span>
+              </li>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <i class="bx bxl-github skills__icon"></i>
-                <span class="skills__name">GitHub</span>
-              </div>
-              <div class="skills__bar skills__github"></div>
-              <span class="skills__percentage">80%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <i class="bx bxl-github skills__icon" aria-hidden="true"></i>
+                  <span class="skills__name">GitHub</span>
+                </div>
+                <div
+                  class="skills__bar skills__github"
+                  role="progressbar"
+                  aria-label="GitHub proficiency"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">80%</span>
+              </li>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <img
-                  src="assets/img/mysql.svg"
-                  alt="MySQL logo"
-                  class="skills__icon"
-                  loading="lazy"
-                />
-                <span class="skills__name">MySQL</span>
-              </div>
-              <div class="skills__bar skills__mysql"></div>
-              <span class="skills__percentage">70%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <img
+                    src="assets/img/mysql.svg"
+                    alt=""
+                    class="skills__icon"
+                    width="32"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="skills__name">MySQL</span>
+                </div>
+                <div
+                  class="skills__bar skills__mysql"
+                  role="progressbar"
+                  aria-label="MySQL proficiency"
+                  aria-valuenow="70"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">70%</span>
+              </li>
 
-            <div class="skills__data">
-              <div class="skills__names">
-                <i class="bx bxs-network-chart skills__icon"></i>
-                <span class="skills__name">Networking (basics)</span>
-              </div>
-              <div class="skills__bar skills__networking"></div>
-              <span class="skills__percentage">60%</span>
-            </div>
+              <li class="skills__data">
+                <div class="skills__names">
+                  <i
+                    class="bx bxs-network-chart skills__icon"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="skills__name">Networking (basics)</span>
+                </div>
+                <div
+                  class="skills__bar skills__networking"
+                  role="progressbar"
+                  aria-label="Networking proficiency"
+                  aria-valuenow="60"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+                <span class="skills__percentage">60%</span>
+              </li>
+            </ul>
           </div>
 
           <div>
             <img
               src="assets/img/work3.jpg"
-              alt="Developer working"
+              alt="Developer working at a desk with code on screen"
               class="skills__img"
+              width="500"
+              height="500"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
       </section>
 
-      <section class="projects section" id="projects">
-        <h2 class="section-title">Projects</h2>
+      <section
+        class="projects section"
+        id="projects"
+        aria-labelledby="projects-heading"
+      >
+        <h2 class="section-title" id="projects-heading">Projects</h2>
 
         <div class="projects__container bd-grid">
-          <div class="project__item">
+          <article class="project__item">
             <h3 class="project__title">Admin Dashboard</h3>
             <p class="project__description">
               A responsive Admin Dashboard panel built with React and Tailwind
               CSS. Includes interactive charts, role-based views, user
-              management (CRUD), and real-time data widgets â€” designed for
+              management (CRUD), and real-time data widgets — designed for
               production-ready admin flows.
             </p>
-          </div>
+          </article>
 
-          <div class="project__item">
+          <article class="project__item">
             <h3 class="project__title">Netflix Clone</h3>
             <p class="project__description">
               A fully responsive Netflix clone built with HTML, CSS, and
               JavaScript. Features dynamic content display, search
               functionality, and a modern UI similar to the original interface.
             </p>
-          </div>
+          </article>
 
-          <div class="project__item">
+          <article class="project__item">
             <h3 class="project__title">Currency Converter</h3>
             <p class="project__description">
               A real-time currency converter that fetches live exchange rates
               and instantly displays conversions between multiple currencies.
               Built with HTML, CSS, and JavaScript.
             </p>
-          </div>
+          </article>
 
-          <div class="project__item">
+          <article class="project__item">
             <h3 class="project__title">Myntra Clone</h3>
             <p class="project__description">
               An e-commerce platform clone with product listings, filtering
               options, and a full add-to-cart flow. Built with HTML, CSS, and
               vanilla JavaScript.
             </p>
-          </div>
+          </article>
 
-          <div class="project__item">
+          <article class="project__item">
             <h3 class="project__title">Amazon Clone</h3>
             <p class="project__description">
               A comprehensive Amazon clone with a product catalogue, search, and
               shopping cart management. Developed to replicate core e-commerce
               functionality using HTML, CSS, and JavaScript.
             </p>
-          </div>
+          </article>
 
-          <div class="project__item">
+          <article class="project__item">
             <h3 class="project__title">Weather App</h3>
             <p class="project__description">
               A weather application that fetches real-time data from a public
               API and shows temperature, conditions, and forecasts.
             </p>
-          </div>
+          </article>
 
-          <div class="project__item projects__github-card">
+          <article class="project__item projects__github-card">
             <div class="projects__github-icon">
-              <i class="bx bxl-github"></i>
+              <i class="bx bxl-github" aria-hidden="true"></i>
             </div>
             <h3 class="project__title">More on GitHub</h3>
             <p class="project__description">
@@ -370,53 +566,89 @@
               target="_blank"
               rel="noreferrer noopener"
               class="button projects__github-btn"
-              >View GitHub</a
+              >View GitHub <span class="sr-only">(opens in new tab)</span></a
             >
-          </div>
+          </article>
         </div>
       </section>
 
-      <section class="contact section" id="contact">
-        <h2 class="section-title">Contact</h2>
+      <section
+        class="contact section"
+        id="contact"
+        aria-labelledby="contact-heading"
+      >
+        <h2 class="section-title" id="contact-heading">Contact</h2>
 
         <div class="contact__container bd-grid">
-          <form class="contact__form" id="contact-form" novalidate>
-            <input
-              type="text"
-              id="contact-name"
-              placeholder="Name"
-              class="contact__input"
-              required
-              autocomplete="name"
-            />
-            <input
-              type="email"
-              id="contact-email"
-              placeholder="Email"
-              class="contact__input"
-              required
-              autocomplete="email"
-            />
-            <textarea
-              id="contact-message"
-              rows="10"
-              placeholder="Message"
-              class="contact__input"
-              required
-            ></textarea>
+          <form
+            class="contact__form"
+            id="contact-form"
+            novalidate
+            aria-describedby="contact-notice"
+          >
+            <div class="contact__field">
+              <label for="contact-name" class="sr-only">Name</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                placeholder="Name"
+                class="contact__input"
+                required
+                autocomplete="name"
+                aria-required="true"
+              />
+            </div>
 
-            <p class="contact__notice">
-              <i class="bx bx-info-circle"></i>
-              This opens your default mail app â€” an email client must be
+            <div class="contact__field">
+              <label for="contact-email" class="sr-only">Email</label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                placeholder="Email"
+                class="contact__input"
+                required
+                autocomplete="email"
+                aria-required="true"
+              />
+            </div>
+
+            <div class="contact__field">
+              <label for="contact-message" class="sr-only">Message</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="10"
+                placeholder="Message"
+                class="contact__input"
+                required
+                aria-required="true"
+              ></textarea>
+            </div>
+
+            <p class="contact__notice" id="contact-notice">
+              <i class="bx bx-info-circle" aria-hidden="true"></i>
+              This opens your default mail app — an email client must be
               configured to send.
             </p>
 
-            <p class="contact__error" id="contact-error"></p>
+            <p
+              class="contact__error"
+              id="contact-error"
+              role="alert"
+              aria-live="assertive"
+            ></p>
 
-            <p class="contact__success" id="contact-success"></p>
+            <p
+              class="contact__success"
+              id="contact-success"
+              role="status"
+              aria-live="polite"
+            ></p>
 
             <button type="submit" class="contact__button button">
-              <i class="bx bx-send contact__btn-icon"></i>
+              <i class="bx bx-send contact__btn-icon" aria-hidden="true"></i>
               Send Message
             </button>
           </form>
@@ -427,48 +659,46 @@
     <footer class="footer">
       <p class="footer__title">Sumit Sunar</p>
 
-      <div class="footer__social">
+      <nav class="footer__social" aria-label="Footer social media links">
         <a
           href="https://www.facebook.com/sunarsumit011"
           class="footer__icon"
-          aria-label="Facebook"
+          aria-label="Sumit Sunar on Facebook (opens in new tab)"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-facebook" aria-hidden="true"></i>
         </a>
         <a
           href="https://www.instagram.com/sunarsumit011/"
           class="footer__icon"
-          aria-label="Instagram"
+          aria-label="Sumit Sunar on Instagram (opens in new tab)"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <i class="bx bxl-instagram"></i>
+          <i class="bx bxl-instagram" aria-hidden="true"></i>
         </a>
         <a
           href="https://github.com/sunarsumit011"
           class="footer__icon"
-          aria-label="GitHub"
+          aria-label="Sumit Sunar on GitHub (opens in new tab)"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <i class="bx bxl-github"></i>
+          <i class="bx bxl-github" aria-hidden="true"></i>
         </a>
-      </div>
+      </nav>
 
-      <p class="footer__copy">&copy; Sumit Sunar. All rights reserved.</p>
+      <p class="footer__copy">
+        &copy; <span id="footer-year">2026</span> Sumit Sunar. All rights
+        reserved.
+      </p>
     </footer>
 
-    <a href="javascript:void(0)" id="scroll-top" class="scroll-top" aria-label="Go to top">
-      <i class="bx bx-up-arrow-alt"></i>
-    </a>
-
-    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.2.0/dist/scrollreveal.min.js"></script>
-
-    <script src="assets/js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/scrollreveal@4.2.0/dist/scrollreveal.min.js"
+      defer
+    ></script>
+    <script src="assets/js/main.js" defer></script>
   </body>
 </html>
-
-
-
